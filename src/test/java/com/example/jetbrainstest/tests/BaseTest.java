@@ -18,11 +18,11 @@ public class BaseTest {
     @BeforeEach
     public void setUp() {
 //        System.setProperty("webdriver.chrome.driver", "src//test//java//com//example//jetbrainstest//resources//chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
+//        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("--headless");
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
+//        chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
