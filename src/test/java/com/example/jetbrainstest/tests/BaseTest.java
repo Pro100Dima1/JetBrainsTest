@@ -17,7 +17,7 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src//test//java//com//example//jetbrainstest//resources//chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "src//test//java//com//example//jetbrainstest//resources//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("--headless");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
