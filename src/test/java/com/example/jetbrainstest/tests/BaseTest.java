@@ -19,7 +19,7 @@ public class BaseTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src//test//java//com//example//jetbrainstest//resources//chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+//        chromeOptions.addArguments("--headless");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
