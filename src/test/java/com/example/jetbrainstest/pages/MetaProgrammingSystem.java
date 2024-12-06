@@ -1,5 +1,7 @@
 package com.example.jetbrainstest.pages;
 
+import com.example.jetbrainstest.AllureLogger;
+import com.example.jetbrainstest.pages.youtrackpages.YouTrackPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,9 +16,8 @@ public class MetaProgrammingSystem {
 
     @FindBy(css = "a[data-test='button' ][href ='/mps/download/']")
     private WebElement downloadButton;
-
     public Boolean checkIfDownloadButtonIsClickable() {
-        System.out.println("Кнопка загрузки доступна");
+        LOG.info("Кнопка загрузки доступна");
         return downloadButton.isEnabled();
     }
 
