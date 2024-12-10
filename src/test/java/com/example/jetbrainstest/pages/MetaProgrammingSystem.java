@@ -12,7 +12,7 @@ public class MetaProgrammingSystem {
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(MetaProgrammingSystem.class));
     WebDriver driver;
 
-    @FindBy(css = "a[data-test='button' ][href ='/mps/download/']")
+    @FindBy(css = "a[data-test='button' ][href ='/mps/downloadd/']")
 
     private WebElement downloadButton;
 
