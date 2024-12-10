@@ -17,7 +17,7 @@ public class MetaProgrammingSystem {
     private WebElement downloadButton;
 
     public Boolean checkIfDownloadButtonIsClickable() {
-        LOG.info("Кнопка загрузки доступна");
+        LOG.infoWithScreenshot("Кнопка загрузки доступна");
         return downloadButton.isEnabled();
     }
 
