@@ -36,5 +36,4 @@ public class MetaProgrammingSystemTest extends BaseTest {
 
     }
 }
-
 //P.S. Буду еще тесты потом накидывать
