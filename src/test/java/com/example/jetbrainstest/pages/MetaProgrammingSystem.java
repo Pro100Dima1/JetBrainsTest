@@ -13,7 +13,6 @@ public class MetaProgrammingSystem {
     WebDriver driver;
 
     @FindBy(css = "a[data-test='button' ][href ='/mps/downloadd/']")
-
     private WebElement downloadButton;
 
     public Boolean checkIfDownloadButtonIsClickable() {
