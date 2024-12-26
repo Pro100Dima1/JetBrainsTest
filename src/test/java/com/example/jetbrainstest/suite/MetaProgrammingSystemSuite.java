@@ -9,4 +9,3 @@ import org.junit.platform.suite.api.Suite;
 @IncludeTags("MpsPageButton")
 public class MetaProgrammingSystemSuite {
 }
-
