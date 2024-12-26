@@ -30,8 +30,8 @@ public class MetaProgrammingSystemPage {
     @FindBy(css = "a[href ='/mps/support/']")
     private WebElement servicesButton;
 
-     @FindBy(css = "a[href='/help/mps/mps-faq.html']")
-     private WebElement faqButton;
+    @FindBy(css = "a[href='/help/mps/mps-faq.html']")
+    private WebElement faqButton;
 
     @FindBy(css = "a[href='https://www.jetbrains.com/help/mps/migration-guide.html']")
     private WebElement migrationGuideButton;
@@ -51,6 +51,17 @@ public class MetaProgrammingSystemPage {
     @FindBy(css = "h1[class='_rs-hero_18dgpd9_1 _rs-typography_theme_dark_18dgpd9_1 _rs-text_hardness_auto_18dgpd9_1 wt-offset-top-24']")
     private WebElement mainPageText;
 
+    @FindBy(css = "span[data-test='menu-second-title-box-title']")
+    private WebElement mpsMainPageText;
+
+    @FindBy(css = "a[data-test='site-header-cart-action']")
+    private WebElement storeButton;
+
+    @FindBy(css = "a[href='https://account.jetbrains.com/']")
+    private WebElement profileButton;
+
+    @FindBy(css = "button[aria-label='Open language selection']")
+    private WebElement languageButton;
 
     public String checkSendTextIntoSearchField(String input) {
         LOG.infoWithScreenshot("Проверка URL после search");
@@ -63,6 +74,21 @@ public class MetaProgrammingSystemPage {
     public Boolean checkIfSearchButtonIsClickable() {
         LOG.infoWithScreenshot("Проверка кликабельности кнопки search");
         return searchButton.isEnabled();
+    }
+
+    public Boolean checkIfLanguageButtonIsClickable() {
+        LOG.infoWithScreenshot("Проверка кликабельности кнопки смены языка");
+        return languageButton.isEnabled();
+    }
+
+    public Boolean checkIfProfileButtonIsClickable() {
+        LOG.infoWithScreenshot("Проверка кликабельности кнопки profile");
+        return profileButton.isEnabled();
+    }
+
+    public Boolean checkIfStoreButtonIsClickable() {
+        LOG.infoWithScreenshot("Проверка кликабельности кнопки store");
+        return storeButton.isEnabled();
     }
 
     public Boolean checkIfDownloadButtonIsClickable() {
@@ -110,7 +136,7 @@ public class MetaProgrammingSystemPage {
     public Boolean checkIfGetStartedButtonIsClickable() {
         clickLearnMpsElement();
         LOG.infoWithScreenshot("Проверка кликабельности кнопки Get Started");
-        return migrationGuideButton.isEnabled();
+        return getStartedButton.isEnabled();
     }
 
     public String checkTextOnDownloadPage() {
@@ -119,28 +145,34 @@ public class MetaProgrammingSystemPage {
         return textOnDownloadPage.getText();
     }
 
+    public String checkMpsTextOnMainPage() {
+        LOG.infoWithScreenshot("Проверка текста Download MPS");
+        return mpsMainPageText.getText();
+    }
+
     public String checkTextOnMainPage() {
         LOG.infoWithScreenshot("Проверка текста Download MPS");
         return mainPageText.getText();
     }
 
-    public String getCurentUrlDownloadPage(){
+    public String getCurentUrlDownloadPage() {
         LOG.infoWithScreenshot("Переход на страницу загрузки");
         clickDownloadElement();
         return driver.getCurrentUrl();
     }
 
-    public String getCurentUrlLearnMpsPage(){
+    public String getCurentUrlLearnMpsPage() {
         LOG.infoWithScreenshot("Переход на страницу Learn MPS");
         clickLearnMpsElement();
         return driver.getCurrentUrl();
     }
-    public String getCurentUrlSearchPage(){
+
+    public String getCurentUrlSearchPage() {
         LOG.infoWithScreenshot("Переход на страницу Learn MPS");
         return driver.getCurrentUrl();
     }
 
-    public String getCurentUrlGetStartedPage(){
+    public String getCurentUrlGetStartedPage() {
         LOG.infoWithScreenshot("Переход на страницу Get Started");
         clickGetStartedElement();
         return driver.getCurrentUrl();
@@ -151,19 +183,19 @@ public class MetaProgrammingSystemPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickDownloadElement(){
+    public void clickDownloadElement() {
         downloadButton.click();
     }
 
-    public void clickLearnMpsElement(){
+    public void clickLearnMpsElement() {
         learnMpsButton.click();
     }
 
-    public void clickGetStartedElement(){
+    public void clickGetStartedElement() {
         getStartedButton.click();
     }
 
-    public void clickSearchButton(){
+    public void clickSearchButton() {
         searchButton.click();
     }
 }

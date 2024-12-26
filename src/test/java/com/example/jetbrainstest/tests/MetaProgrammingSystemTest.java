@@ -19,7 +19,6 @@ public class MetaProgrammingSystemTest extends BaseTest {
     private MetaProgrammingSystemPage MetaProgrammingSystem;
     private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(MetaProgrammingSystemTest.class));
 
-
     @BeforeEach
     @Override
     public void setUp() {
@@ -35,6 +34,12 @@ public class MetaProgrammingSystemTest extends BaseTest {
         assertTrue(MetaProgrammingSystem.checkIfDownloadButtonIsClickable(), "Кнопка Download не активна");
     }
 
+    @Test
+    @DisplayName("Проверка, что кнопка смены языка активна")
+    @Tag("MpsPageButton")
+    public void languageButtonCheck() {
+        assertTrue(MetaProgrammingSystem.checkIfLanguageButtonIsClickable(), "Кнопка смены языка не активна");
+    }
 
     @Test
     @DisplayName("Проверка, что кнопка EAP Program активна")
@@ -96,6 +101,13 @@ public class MetaProgrammingSystemTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Проверка, что кнопка Profile активна")
+    @Tag("MpsDownloadPageButton")
+    public void ProfileButtonCheck() {
+        assertTrue(MetaProgrammingSystem.checkIfProfileButtonIsClickable(), "Кнопка Profile не активна");
+    }
+
+    @Test
     @DisplayName("Проверка, что кнопка Migration Guide активна")
     @Tag("MpsDownloadPageButton")
     public void MigrationGuideButtonCheck() {
@@ -110,7 +122,14 @@ public class MetaProgrammingSystemTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка, что перешли на экран загрузки")
+    @DisplayName("Проверка, что кнопка Get Started активна")
+    @Tag("MpsDownloadPageButton")
+    public void StoreButtonCheck() {
+        assertTrue(MetaProgrammingSystem.checkIfStoreButtonIsClickable(), "Кнопка Get Started не активна");
+    }
+
+    @Test
+    @DisplayName("Проверка текста Download MPS")
     @Tag("AnotherCheck")
     public void textOnDownloadPage() {
         String expectedText = "Download MPS";
@@ -119,11 +138,20 @@ public class MetaProgrammingSystemTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка, что перешли на экран загрузки")
+    @DisplayName("Проверка текста на главной странице")
     @Tag("AnotherCheck")
     public void textOnMainPage() {
         String expectedText = "Meta Programming System";
         String actualText = MetaProgrammingSystem.checkTextOnMainPage();
+        assertEquals(expectedText, actualText, "Текст не совпадают");
+    }
+
+    @Test
+    @DisplayName("Проверка текста MPS на главной странице")
+    @Tag("AnotherCheck")
+    public void mpsTextOnMainPage() {
+        String expectedText = "MPS";
+        String actualText = MetaProgrammingSystem.checkMpsTextOnMainPage();
         assertEquals(expectedText, actualText, "Текст не совпадают");
     }
 
