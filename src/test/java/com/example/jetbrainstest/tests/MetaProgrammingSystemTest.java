@@ -77,14 +77,14 @@ public class MetaProgrammingSystemTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка, что кнопка Services активна")
+    @DisplayName("Проверка, что кнопка Search активна")
     @Tag("MpsPageButton")
     public void SearchButtonCheck() {
         assertTrue(MetaProgrammingSystem.checkIfSearchButtonIsClickable(), "Кнопка search не активна");
     }
 
     @Test
-    @DisplayName("Проверка, что кнопка Services активна")
+    @DisplayName("Проверка поисковой строки")
     @Tag("MpsPageButton")
     public void SearchFieldCheck() {
         MetaProgrammingSystem.checkSendTextIntoSearchField("Selenium");
@@ -122,10 +122,10 @@ public class MetaProgrammingSystemTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка, что кнопка Get Started активна")
+    @DisplayName("Проверка, что кнопка Store активна")
     @Tag("MpsDownloadPageButton")
     public void StoreButtonCheck() {
-        assertTrue(MetaProgrammingSystem.checkIfStoreButtonIsClickable(), "Кнопка Get Started не активна");
+        assertTrue(MetaProgrammingSystem.checkIfStoreButtonIsClickable(), "Кнопка Store не активна");
     }
 
     @Test
