@@ -6,6 +6,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectPackages("com.example.jetbrainstest.tests")
-@IncludeTags("MpsPageButton")
+@IncludeTags("AnotherCheck")
 public class MetaProgrammingSystemSuite {
 }
